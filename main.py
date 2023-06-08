@@ -21,11 +21,22 @@ class Car(Base):
 # Defining the Manufacturer table
 class Manufacturer(Base):
     __tablename__ = 'manufacturer'
+    # Defining the primary key
+    # Defining the columns
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    cars = relationship("Car", back_populates="manufacturer")
+    name = Column(String(250), nullable=False)
     
-# Creating the tables
-Base.metadata.create_all()
+    # Creating the tables
+    Base.metadata.create_all(engine)
+    
+    # Creating a session
+    session = Session()
+    
+    # Creating a new car
+    new_car = Car(make="Ford", model="Mustang", year=1)
+    new_car = Car(make="Ford", model="Mustang", year=1)
+    
+
+   
 
 
