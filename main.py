@@ -15,7 +15,17 @@ class Car(Base):
     model = Column(String)
     year = Column(Integer)
     price = Column(Integer)
-    manufacturer_id = Column(Integer, ForeignKey('manufacturer.id'))
-    category_id = Column(Integer, ForeignKey('category.id'))
+    manufacturer_id = Column(Integer, ForeignKey('manufacturer.id'))   
     manufacturer = relationship("Manufacturer", back_populates="cars")
-    category = relationship("Category", back_populates="cars")
+    
+# Defining the Manufacturer table
+class Manufacturer(Base):
+    __tablename__ = 'manufacturer'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    cars = relationship("Car", back_populates="manufacturer")
+    
+# Creating the tables
+Base.metadata.create_all()
+
+
