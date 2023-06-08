@@ -74,11 +74,7 @@ class CarDealership:
             return None
         
     def close(self):
-        self.session.close()
-        
-        
-        
-        
+        self.session.close()    
         
 def main():
     
@@ -98,15 +94,14 @@ def main():
         
         if choice == 1:
             print("You are ordering at Augasha Motors")
-            nbrand = input ("Brand of car: ")
-            nmodel = input ("The model of the car is: ")
+            nbrand = input ("The brand of the car: ")
             nprice = int(input ("The price of the car is: "))
             ncolor = input ("Color of car: ") 
-            carlist.append([nbrand, nmodel, nprice, ncolor])
+            carlist.append([nbrand, nprice, ncolor])
             
         elif choice == 2:
             print("You are checking a car at Augasha Motors")
-            keyword = input("search for a car: ")
+            keyword = input("search for a car at Augasha Motors: ")
             for car in carlist:
                 if keyword in car:
                     print(car)
@@ -118,7 +113,7 @@ def main():
                 
         elif choice == 4:
             print("You are exiting the car dealership")
-    print("Programme terminated, Thank you.")
+    print("Thank you, for doing business with Augasha.")
     
                         
            
