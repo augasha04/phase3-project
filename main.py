@@ -1,14 +1,10 @@
+
+
 def main():
     
     #initialize carlist
     carlist = []
-    
-    infile = open("AugashaMotors.txt", "r")
-    line = infile.readline()
-    while line:
-        carlist.append(line.rsplit("\n").split(","))
-        line = infile.readline()
-    infile.close()    
+        
     
     # creating the car dealership menu
     choice = 0
@@ -18,7 +14,7 @@ def main():
         print("2. Check a car")
         print("3. Print all cars")
         print("4. Exit")
-        choice = int(input())
+        choice = int(input("ENTER YOUR CHOICE BTW (1-4):"))
         
         if choice == 1:
             print("You are ordering at Augasha Motors")
@@ -44,13 +40,7 @@ def main():
             print("You are exiting the car dealership")
     print("Programme terminated, Thank you.")
     
-    #saving to an extenal file.
-    outfile = open("AugashaMotors.txt", "w")
-    for car in carlist:
-        outfile.write(",".join(car) + "\n")
-    outfile.close()
-    
-                    
+                        
            
 if __name__ == "__main__":
     main()
