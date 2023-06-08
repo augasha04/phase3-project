@@ -70,13 +70,7 @@ class CarDealership:
             return car
         else:
             return None
-
-    def display_inventory(self):
-        cars = self.session.query(Car).all()
-        print("Car Inventory:")
-        for car in cars:
-            print(f"{car.make} {car.model} ({car.year}) - ${car.price} | Manufacturer: {car.manufacturer.name} | Category: {car.category.name}")
-
+        
     def close(self):
         self.session.close()
 
